@@ -3,6 +3,7 @@ ja:
     models:
       administrator: 管理者
       user: ユーザー
+      plan: プラン
     attributes:
       administrator:
         email: メールアドレス
@@ -10,3 +11,5 @@ ja:
       user:
         email: メールアドレス
         password: パスワード
+      plan:
+        name: プラン名

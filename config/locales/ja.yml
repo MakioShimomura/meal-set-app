@@ -182,3 +182,19 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  controllers:
+    created: 登録しました
+    updated: 更新しました
+    destroyed: 削除しました
+    canceled: キャンセルしました
+  views:
+    back: 戻る
+    new: 新規登録
+    edit: 編集
+    show: 詳細
+    save: 登録
+    sending: 処理中
+    destroy: 削除
+    confirm: 削除します。よろしいですか？
+    pagination:
+      truncate: "&hellip;"

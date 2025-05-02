@@ -1,0 +1,10 @@
+%h2.mb-3 プラン一覧
+.mb-3= link_to t('views.new'), new_admins_plan_path, class: 'btn btn-primary'
+%table.table.table-bordered
+  %thead
+    %tr
+      %th= Plan.human_attribute_name(:name)
+  %tbody
+    - @plans.each do |plan|
+      %tr
+        %td= link_to plan.name, edit_admins_plan_path(plan)
