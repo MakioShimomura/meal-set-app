@@ -2,7 +2,11 @@ ja:
   activerecord:
     models:
       administrator: 管理者
+      user: ユーザー
     attributes:
       administrator:
+        email: メールアドレス
+        password: パスワード
+      user:
         email: メールアドレス
         password: パスワード
