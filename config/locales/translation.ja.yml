@@ -12,6 +12,11 @@ ja:
       user:
         email: メールアドレス
         password: パスワード
+        name: 名前
+        address: 住所
+        tel: 電話番号
+        suspended: 一時停止
+        plan: 選択中プラン
       plan:
         name: プラン名
       meal_kit:

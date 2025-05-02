@@ -1,0 +1,11 @@
+%h2.mb-3 ユーザー設定編集
+
+.card
+  .card-body
+    = simple_form_for @user do |f|
+      = f.input :name
+      = f.input :address
+      = f.input :tel
+      = f.association :plan
+      = f.input :suspended, as: :boolean, label: '利用停止'
+      = f.button :submit, class: 'btn-primary'

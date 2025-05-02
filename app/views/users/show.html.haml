@@ -1,0 +1,20 @@
+%h2.mb-3 ユーザー設定確認
+
+= link_to '編集', edit_user_path, class: 'btn btn-primary'
+
+%table.table.mt-3
+  %tr
+    %th= User.human_attribute_name(:name)
+    %td= @user.name
+  %tr
+    %th= User.human_attribute_name(:address)
+    %td= @user.address
+  %tr
+    %th= User.human_attribute_name(:tel)
+    %td= @user.tel
+  %tr
+    %th 利用状況
+    %td= @user.suspended ? '停止中' : '利用中'
+  %tr
+    %th= Plan.human_attribute_name(:name)
+    %td= @user.plan&.name

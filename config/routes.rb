@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     resources :meal_kits, only: %i[index new create edit update destroy]
     root 'home#index'
   end
+  resource :user, only: %i[show edit update]
   root 'home#index'
 end
