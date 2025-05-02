@@ -1,4 +1,4 @@
-class Admins::PlansController < ApplicationController
+class Admins::PlansController < Admins::ApplicationController
   before_action :set_plan, only: %i[edit update]
 
   def index
