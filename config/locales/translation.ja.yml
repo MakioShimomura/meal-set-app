@@ -17,6 +17,7 @@ ja:
         tel: 電話番号
         suspended: 一時停止
         plan: 選択中プラン
+        shipping_schedule: 配送スケジュール
       plan:
         name: プラン名
       meal_kit:
@@ -28,3 +29,8 @@ ja:
         has_refrigerated: 冷蔵品
         has_frozen: 冷凍品
         allergy_content: アレルギー情報
+  enumerize:
+    user:
+      shipping_schedule:
+        weekly: 毎週
+        twice_month: 月に2回

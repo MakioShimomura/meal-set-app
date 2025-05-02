@@ -13,7 +13,7 @@ class Order < ApplicationRecord
   class << self
     def bulk_create!
       User.where(suspended: false).each do |user|
-        meal_kits = MealKit.default_order.limit(5)
+        meal_kits = MealKit.where(plan: user.plan).default_order.limit(5)
         order_details = meal_kits.map do |meal_kit|
           meal_kit.order_details.build(
             has_frozen: meal_kit.has_frozen,

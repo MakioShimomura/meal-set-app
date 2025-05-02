@@ -22,6 +22,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.expect(user: %i[name address tel suspended plan_id])
+    params.expect(user: %i[name address tel suspended plan_id shipping_schedule])
   end
 end
