@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_02_052059) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_02_061516) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -40,6 +40,28 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_02_052059) do
     t.index ["plan_id"], name: "index_meal_kits_on_plan_id"
   end
 
+  create_table "order_details", force: :cascade do |t|
+    t.bigint "order_id", null: false
+    t.bigint "meal_kit_id", null: false
+    t.boolean "has_frozen", default: false, null: false
+    t.integer "price", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["meal_kit_id"], name: "index_order_details_on_meal_kit_id"
+    t.index ["order_id"], name: "index_order_details_on_order_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "shipping_on", null: false
+    t.string "time_slot", null: false
+    t.string "status", null: false
+    t.integer "billing_amount", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "plans", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -65,5 +87,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_02_052059) do
   end
 
   add_foreign_key "meal_kits", "plans"
+  add_foreign_key "order_details", "meal_kits"
+  add_foreign_key "order_details", "orders"
+  add_foreign_key "orders", "users"
   add_foreign_key "users", "plans"
 end
