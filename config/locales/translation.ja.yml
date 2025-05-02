@@ -4,6 +4,7 @@ ja:
       administrator: 管理者
       user: ユーザー
       plan: プラン
+      meal_kit: ミールキット
     attributes:
       administrator:
         email: メールアドレス
@@ -13,3 +14,12 @@ ja:
         password: パスワード
       plan:
         name: プラン名
+      meal_kit:
+        plan: プラン
+        name: セット名
+        price: 価格
+        meal_content: 内容品目
+        weight: 重量
+        has_refrigerated: 冷蔵品
+        has_frozen: 冷凍品
+        allergy_content: アレルギー情報

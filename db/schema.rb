@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_02_025526) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_02_035139) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -24,6 +24,20 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_02_025526) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_administrators_on_email", unique: true
     t.index ["reset_password_token"], name: "index_administrators_on_reset_password_token", unique: true
+  end
+
+  create_table "meal_kits", force: :cascade do |t|
+    t.bigint "plan_id", null: false
+    t.string "name", null: false
+    t.integer "price", null: false
+    t.text "meal_content", null: false
+    t.float "weight", null: false
+    t.boolean "has_refrigerated", default: false, null: false
+    t.boolean "has_frozen", default: false, null: false
+    t.text "allergy_content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["plan_id"], name: "index_meal_kits_on_plan_id"
   end
 
   create_table "plans", force: :cascade do |t|
@@ -43,4 +57,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_02_025526) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
+  add_foreign_key "meal_kits", "plans"
 end

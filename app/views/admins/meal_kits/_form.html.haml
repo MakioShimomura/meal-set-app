@@ -1,0 +1,12 @@
+.card
+  .card-body
+    = simple_form_for [:admins, @meal_kit] do |f|
+      = f.association :plan
+      = f.input :name
+      = f.input :price
+      = f.input :meal_content
+      = f.input :weight
+      = f.input :has_refrigerated
+      = f.input :has_frozen
+      = f.input :allergy_content
+      = f.button :submit, class: 'btn-primary'

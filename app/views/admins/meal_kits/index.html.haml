@@ -1,0 +1,14 @@
+%h2.mb-3 ミールキット一覧
+.mb-3= link_to t('views.new'), new_admins_meal_kit_path, class: 'btn btn-primary'
+%table.table.table-bordered
+  %thead
+    %tr
+      %th= MealKit.human_attribute_name(:name)
+      %th= MealKit.human_attribute_name(:plan)
+      %th= MealKit.human_attribute_name(:price)
+  %tbody
+    - @meal_kits.each do |meal_kit|
+      %tr
+        %td= link_to meal_kit.name, edit_admins_meal_kit_path(meal_kit)
+        %td= meal_kit.plan.name
+        %td= meal_kit.price
